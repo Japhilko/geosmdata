@@ -1,0 +1,9 @@
+{
+    "path" : "~/GitHub/GeoData/geosmdata/man",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}
