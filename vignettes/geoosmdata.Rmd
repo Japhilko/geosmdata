@@ -38,9 +38,25 @@ gc <- geocode_osm("rue Saint Vincent Paris",output="all")
 ```{r,cache=ca,eval=Val_eval}
 library(XML)
 pg_MA <- get_osm_nodes(object="leisure=playground","Mannheim")
+```
 
+The result is an osm object in xml format. It contains information about nodes, ways and relations. We have to extract this information in anext step:
+
+```{r}
 info <- extract_osm_nodes(OSM.Data=pg_MA,value="playground")
 ```
+
+## Download nodes within a given boundary
+
+```{r}
+objectI <- "leisure=playground"
+boundaryI <- "50.6,7.0,50.8,7.3"
+osm_obj <- nodes4boundaries(objectI,boundaryI)
+```
+
+
+
+# Plotting the OSM-information
 
 The `ggmap` function from package [ggmap](https://cran.r-project.org/web/packages/ggmap/index.html) can be used to download a background map. 
 
